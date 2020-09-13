@@ -8,8 +8,14 @@
 			height: 500px;
 		}
 	</style>
+  <script>
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.withCredentials = false;
+  xmlHttp.open( "GET", "https://www.cricbuzz.com/api/html/cricket-scorecard/29803", false ); // false for synchronous request
+  xmlHttp.send();
+  console.log(xmlHttp.responseText); ;
+  </script>
 </head>
 <body>
-    <iframe src="https://www.cricbuzz.com/api/html/cricket-scorecard/29803" name="myFrame"></iframe>
 </body>
 </html>
