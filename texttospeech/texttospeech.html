@@ -1,14 +1,6 @@
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 <script type="text/javascript">
   const urlParams = new URLSearchParams(window.location.search);
   const myParam = urlParams.get('text');
-  var msg = new SpeechSynthesisUtterance();
-    var voices = window.speechSynthesis.getVoices();
-    msg.voice = voices[10];
-    msg.voiceURI = "native";
-    msg.volume = 1;
-    msg.rate = 1;
-    msg.pitch = 0.8;
-    msg.text = myParam;
-    msg.lang = 'en-IN';
-    speechSynthesis.speak(msg);
+  responsiveVoice.speak(myParam);
 </script>
