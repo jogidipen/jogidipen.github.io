@@ -1,12 +1,5 @@
 
-<body>
-  <input onclick="say('Hello bro');" class=='example' id='button' type='button' value='' />
-</body>
 <script type="text/javascript">
-  function saymain()
-  {
-    document.getElementById("button").click();
-  }
   function say(m) {
   var msg = new SpeechSynthesisUtterance();
   var voices = window.speechSynthesis.getVoices();
