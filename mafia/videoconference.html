@@ -14,8 +14,12 @@
       height: '100%',
       configOverwrite:{
         enableWelcomePage: false,
+        disableDeepLinking: true,
+        prejoinPageEnabled: false,
       },
       interfaceConfigOverwrite:{
+
+        DISPLAY_WELCOME_PAGE_CONTENT: false,
         SHOW_JITSI_WATERMARK: false,
         SHOW_WATERMARK_FOR_GUESTS: false,
         SHOW_BRAND_WATERMARK: false,
@@ -25,6 +29,7 @@
         TOOLBAR_ALWAYS_VISIBLE: false,
         GENERATE_ROOMNAMES_ON_WELCOME_PAGE: false,
         DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
+        HIDE_DEEP_LINKING_LOGO: true,
         TOOLBAR_BUTTONS: [
         'microphone', 'camera',
         'tileview',
