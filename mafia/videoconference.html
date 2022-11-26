@@ -20,7 +20,7 @@
         }
         const domain = 'meet.jit.si';
     const options = {
-      roomName: getParameter(roomName),
+      roomName: getParameter('roomName'),
       width: '100%',
       height: '100%',
       configOverwrite:{
@@ -47,7 +47,7 @@
         ]
       },
       userInfo: {
-        displayName: getParameter(name)
+        displayName: getParameter('name')
       }
     };
       const api = new JitsiMeetExternalAPI(domain, options);
