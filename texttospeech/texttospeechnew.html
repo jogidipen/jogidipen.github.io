@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Speech with MP3 Download</title>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+</head>
+<body>
+
+<h1>Text-to-Speech with MP3 Download</h1>
+
+<label for="textToSynthesize">Enter Text:</label>
+<input type="text" id="textToSynthesize" placeholder="Type something...">
+<button onclick="synthesizeAndDownload()">Synthesize and Download</button>
+
+<script>
+function synthesizeAndDownload() {
+    const textToSynthesize = document.getElementById('textToSynthesize').value;
+
+    if (!textToSynthesize) {
+        alert('Please enter text to synthesize.');
+        return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(textToSynthesize);
+
+    // Use the SpeechSynthesis API to synthesize speech
+    speechSynthesis.speak(utterance);
+
+    // Use recorder.js to capture the audio
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const recorder = new Recorder(audioContext);
+
+    utterance.onend = () => {
+        // Start recording after speech synthesis is complete
+        recorder.record();
+        setTimeout(() => {
+            recorder.stop();
+            recorder.exportWAV((blob) => {
+                // Create a download link for the MP3 file
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'synthesized_audio.mp3';
+                a.click();
+            });
+        }, 1000); // Adjust the delay as needed
+    };
+}
+</script>
+
+</body>
+</html>
