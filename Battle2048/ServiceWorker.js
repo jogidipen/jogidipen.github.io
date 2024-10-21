@@ -1,9 +1,9 @@
 const cacheName = "HighRoller Studio-Battle 2048-1.0";
 const contentToCache = [
     "Build/Battle2048.loader.js",
-    "Build/Battle2048.framework.js.br",
-    "Build/Battle2048.data.br",
-    "Build/Battle2048.wasm.br",
+    "Build/Battle2048.framework.js.gz",
+    "Build/Battle2048.data.gz",
+    "Build/Battle2048.wasm.gz",
     "TemplateData/style.css"
 
 ];
