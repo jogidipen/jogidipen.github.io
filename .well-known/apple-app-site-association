@@ -1,0 +1,11 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "2A7Q7QX8GM.com.northstargames.evolution",
+                "paths": [ "/flight", "/climate"]
+            }
+        ]
+    }
+}
